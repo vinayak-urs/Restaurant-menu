@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:myrestaurant/screens/categories_screen.dart';
-import 'package:myrestaurant/screens/category_meals_screen.dart';
-import 'package:myrestaurant/screens/meal_detail_screen.dart';
+// import './screens/categories_screen.dart';
+import './screens/category_meals_screen.dart';
+import './screens/filter_screen.dart';
+import './screens/meal_detail_screen.dart';
+import './screens/tab_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,11 +25,15 @@ class MyApp extends StatelessWidget {
                 //   fontSize: 20,
                 // ),
               )),
-      home: Homepage(),
+      // home: Homepage(),
       routes: {
-        // "/": (ctx) => Homepage(),
+        "/": (ctx) => Homepage(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+        FilterScreen.routeName: (ctx) => FilterScreen(),
+      },
+      onGenerateRoute: (settings) {
+        return MaterialPageRoute(builder: (context) => CategoryMealsScreen());
       },
     );
   }
@@ -37,16 +43,17 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Center(
-          child: Text("Meals",
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-              )),
-        ),
-      ),
-      body: CategoriesScreen(),
+      // appBar: AppBar(
+      //   title: Center(
+      //     child: Text("Meals",
+      //         style: TextStyle(
+      //           color: Colors.white,
+      //           fontSize: 24,
+      //         )),
+      //   ),
+      // ),
+      body: TabScreen(),
+      // body: CategoriesScreen(),
     );
   }
 }
