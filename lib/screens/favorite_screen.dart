@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myrestaurant/widgets/meal_item.dart';
 
 import '../models/meal.dart';
 
@@ -11,7 +12,21 @@ class FavoriteScreen extends StatelessWidget {
       // appBar: AppBar(
       //     // title: Text("Favorites"),
       //     ),
-      body: Center(child: Text("No Favorites Yet Selected !")),
+      body: favoriteMeal.isEmpty
+          ? Center(child: Text("No Favorites Yet Selected !"))
+          : ListView.builder(
+              itemBuilder: (context, index) {
+                return MealItem(
+                  id: favoriteMeal[index].id,
+                  affordability: favoriteMeal[index].affordability,
+                  complexity: favoriteMeal[index].complexity,
+                  duration: favoriteMeal[index].duration,
+                  imageUrl: favoriteMeal[index].imageUrl,
+                  title: favoriteMeal[index].title,
+                );
+              },
+              itemCount: favoriteMeal.length,
+            ),
     );
   }
 }

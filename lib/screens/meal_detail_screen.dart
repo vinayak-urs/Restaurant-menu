@@ -4,6 +4,9 @@ import 'package:myrestaurant/models/meal.dart';
 
 class MealDetailScreen extends StatelessWidget {
   static const routeName = "/meal-details";
+  final Function togleFavourite;
+  final Function isFavourite;
+  MealDetailScreen(this.isFavourite, this.togleFavourite);
 
   @override
   Widget build(BuildContext context) {
@@ -12,6 +15,12 @@ class MealDetailScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text("${selectedMeals.title}"),
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Icon(isFavourite(mealId) ? Icons.star : Icons.star_border),
+          onPressed: () {
+            togleFavourite(mealId);
+          },
         ),
         body: SingleChildScrollView(
           child: Column(
