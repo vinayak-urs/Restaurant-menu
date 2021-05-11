@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class Category {
   final String id;
@@ -10,6 +8,6 @@ class Category {
   const Category({
     @required this.id,
     @required this.title,
-    @required this.color = Colors.orange,
+    this.color = Colors.orange,
   });
 }

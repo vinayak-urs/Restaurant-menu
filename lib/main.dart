@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:myrestaurant/dummy_data.dart';
-// import './screens/categories_screen.dart';
-import './screens/category_meals_screen.dart';
-import './screens/filter_screen.dart';
+
+import './dummy_data.dart';
+import './screens/tabs_screen.dart';
 import './screens/meal_detail_screen.dart';
-import './screens/tab_screen.dart';
+import './screens/category_meals_screen.dart';
+import './screens/filters_screen.dart';
+import './screens/categories_screen.dart';
 import './models/meal.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
@@ -71,52 +70,48 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'DeliMeals',
       theme: ThemeData(
-          accentColor: Colors.amber,
-          primarySwatch: Colors.pink,
-          canvasColor: Color.fromRGBO(255, 254, 229, 1),
-          textTheme: ThemeData.light().textTheme.copyWith(
-                bodyText1: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
-                bodyText2: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
-                // ignore: deprecated_member_use
-                // caption: TextStyle(
-                //   fontSize: 20,
-                // ),
-              )),
-      // home: Homepage(),
+        primarySwatch: Colors.pink,
+        accentColor: Colors.amber,
+        canvasColor: Color.fromRGBO(255, 254, 229, 1),
+        fontFamily: 'Raleway',
+        textTheme: ThemeData.light().textTheme.copyWith(
+            body1: TextStyle(
+              color: Color.fromRGBO(20, 51, 51, 1),
+            ),
+            body2: TextStyle(
+              color: Color.fromRGBO(20, 51, 51, 1),
+            ),
+            title: TextStyle(
+              fontSize: 20,
+              fontFamily: 'RobotoCondensed',
+              fontWeight: FontWeight.bold,
+            )),
+      ),
+      // home: CategoriesScreen(),
+      initialRoute: '/', // default is '/'
       routes: {
-        "/": (ctx) => Homepage(_favoriteMeals),
+        '/': (ctx) => TabsScreen(_favoriteMeals),
         CategoryMealsScreen.routeName: (ctx) =>
             CategoryMealsScreen(_availableMeals),
-        MealDetailScreen.routeName: (ctx) =>
-            MealDetailScreen(_isMealFavorite, _toggleFavorite),
-        FilterScreen.routeName: (ctx) => FilterScreen(_filters, _setFilters),
+        MealDetailScreen.routeName: (ctx) => MealDetailScreen(_toggleFavorite, _isMealFavorite),
+        FiltersScreen.routeName: (ctx) => FiltersScreen(_filters, _setFilters),
       },
       onGenerateRoute: (settings) {
-        return MaterialPageRoute(
-            builder: (context) => CategoryMealsScreen(_availableMeals));
+        print(settings.arguments);
+        // if (settings.name == '/meal-detail') {
+        //   return ...;
+        // } else if (settings.name == '/something-else') {
+        //   return ...;
+        // }
+        // return MaterialPageRoute(builder: (ctx) => CategoriesScreen(),);
       },
-    );
-  }
-}
-
-class Homepage extends StatelessWidget {
-  List<Meal> favoriteMeal;
-  Homepage(this.favoriteMeal);
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: AppBar(
-      //   title: Center(
-      //     child: Text("Meals",
-      //         style: TextStyle(
-      //           color: Colors.white,
-      //           fontSize: 24,
-      //         )),
-      //   ),
-      // ),
-      body: TabScreen(favoriteMeal),
-      // body: CategoriesScreen(),
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(
+          builder: (ctx) => CategoriesScreen(),
+        );
+      },
     );
   }
 }
