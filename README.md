@@ -1,19 +1,18 @@
 # Restaurant-Menu
 
--- [App Link](https://drive.google.com/file/d/1-504yrQ2RhSHsB-ypuMjHQ1gWKzEIElE/view?usp=sharing)
+- [App Link](https://drive.google.com/file/d/1-504yrQ2RhSHsB-ypuMjHQ1gWKzEIElE/view?usp=sharing)
 
 
-A new Flutter project.
+In this hard time of pandemic its my small contribution for small and medium restuarant This Application can be use in contactless ordering of Food this is the Digital Menu card with filter options also have favorite option from where you can directly have you favorite Dishes.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Key Feature
+  Filter option for Veg, Non Veg, Vegan Lacotose Free etc
+  Favorite feature
+  Categorical dishes with sample food picure
+  There is also steps provided using which you can also cook that dish
+  
+# Future Update
+  Admin application for this application
+  User Authentication 
+  Food ordering system using whatsapp.
+  
