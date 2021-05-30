@@ -4,8 +4,8 @@
 In this hard time of pandemic its my small contribution for small and medium restuarant This Application can be use in contactless ordering of Food this is the Digital Menu card with filter options also have favorite option from where you can directly have you favorite Dishes.
 
 # Demo
-![Demo](https://github.com/in-00/covid_19/blob/d647c57e83b60ceac986da2b5e0a2a44ba74c918/ezgif.com-gif-maker.gif)
-![Demo](https://github.com/in-00/covid_19/blob/a081082243cd22719c9b992fa5bc15022eb2d9c3/demo.gif)
+![Demo](https://drive.google.com/file/d/1TCce0YyT44M6XkTkGSeGVXxHSxThj6s3/view?usp=sharing)
+![Demo](https://drive.google.com/file/d/1CSIVLCECnAawANTBFSgx42E3PZtc6EF4/view?usp=sharing)
 
 # Key Feature
   * Filter option for Veg, Non Veg, Vegan Lacotose Free etc.
